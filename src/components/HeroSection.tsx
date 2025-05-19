@@ -12,13 +12,26 @@ const HeroSection = () => {
       id="home" 
       className="min-h-screen relative flex items-center pt-16 overflow-hidden"
     >
-      {/* Grid Background */}
+      {/* Topographic Background */}
       <div 
         className="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-30" 
-        style={{ backgroundImage: 'linear-gradient(rgba(155, 135, 245, 0.15) 1px, transparent 1px), linear-gradient(to right, rgba(155, 135, 245, 0.15) 1px, transparent 1px)' }}
+        style={{ 
+          backgroundImage: 'linear-gradient(rgba(155, 135, 245, 0.15) 1px, transparent 1px), linear-gradient(to right, rgba(155, 135, 245, 0.15) 1px, transparent 1px)' 
+        }}
       />
       
-      {/* Gradient Blob */}
+      {/* Map Contour Overlay */}
+      <div 
+        className="absolute inset-0 opacity-5"
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1544985361-b420d7a77043?auto=format&fit=crop')", 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center',
+          mixBlendMode: 'overlay'
+        }}
+      />
+      
+      {/* Gradient Blobs */}
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-vaporwave-purple/20 rounded-full filter blur-3xl animate-pulse-light" />
       <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-vaporwave-cyan/20 rounded-full filter blur-3xl animate-pulse-light" />
       
@@ -54,8 +67,15 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Decorative Elements */}
-      <div className="hidden md:block absolute bottom-10 right-10 w-32 h-32 border-2 border-vaporwave-purple/30 rounded-full animate-float" />
+      {/* Coordinate Grid Decorative Elements */}
+      <div className="hidden md:block absolute bottom-10 right-10 w-32 h-32 border-2 border-vaporwave-purple/30 rounded-full animate-float">
+        <div className="absolute inset-0 opacity-50" style={{ 
+          backgroundImage: "radial-gradient(circle, transparent 60%, rgba(155, 135, 245, 0.2) 60%, rgba(155, 135, 245, 0.2) 65%, transparent 65%)" 
+        }}></div>
+        <div className="absolute inset-0 opacity-50" style={{ 
+          backgroundImage: "linear-gradient(0deg, transparent 49%, rgba(155, 135, 245, 0.2) 49%, rgba(155, 135, 245, 0.2) 51%, transparent 51%), linear-gradient(90deg, transparent 49%, rgba(155, 135, 245, 0.2) 49%, rgba(155, 135, 245, 0.2) 51%, transparent 51%)"
+        }}></div>
+      </div>
       <div className="hidden md:block absolute top-40 right-20 w-16 h-16 border-2 border-vaporwave-cyan/30 rounded-full animate-float" style={{ animationDelay: '1s' }} />
     </section>
   );

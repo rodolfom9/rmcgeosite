@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,17 +6,26 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Topographic line effect for loading animations */
+.topo-loading {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(155, 135, 245, 0.1),
+    rgba(155, 135, 245, 0.1) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+  background-size: 200% 100%;
+  animation: topo-shift 3s linear infinite;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+@keyframes topo-shift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }
 
 @keyframes logo-spin {
