@@ -17,7 +17,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "TopoDrone",
+    title: "Nada aqui",
     description: "Aplicação para processamento de dados topográficos capturados por drones, com visualização 3D e geração de curvas de nível.",
     tags: ["React", "Three.js", "WebGL"],
     imageUrl: "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=600&h=400",

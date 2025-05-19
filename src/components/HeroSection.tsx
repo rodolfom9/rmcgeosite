@@ -31,8 +31,7 @@ const HeroSection = () => {
             Projetos de <span className="bg-gradient-to-r from-vaporwave-purple to-vaporwave-cyan bg-clip-text text-transparent">Mapeamento</span> & Topografia
           </h1>
           <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-            Desenvolvedor especializado em soluções digitais para cartografia, agrimensura e 
-            geotecnologias. Explorando a interseção entre dados geográficos e programação.
+            Explorando novos desafios com QGIS e python
           </p>
           <div className="flex flex-wrap gap-4">
             <Button 
