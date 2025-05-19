@@ -12,7 +12,7 @@ const projects = [
     description: "Sistema para mapeamento de propriedades rurais usando QGIS e Python, integrado com geração de relatórios automatizados.",
     tags: ["QGIS", "Python", "Geoespacial"],
     imageUrl: "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?auto=format&fit=crop&w=600&h=400",
-    githubUrl: "https://github.com/",
+    githubUrl: "https://github.com/rodolfom9",
     liveUrl: "#"
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     description: "Aplicação para processamento de dados topográficos capturados por drones, com visualização 3D e geração de curvas de nível.",
     tags: ["React", "Three.js", "WebGL"],
     imageUrl: "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=600&h=400",
-    githubUrl: "https://github.com/",
+    githubUrl: "https://github.com/rodolfom9",
     liveUrl: "#"
   },
   {
@@ -30,7 +30,7 @@ const projects = [
     description: "Banco de dados geográfico para armazenamento e consulta de informações cadastrais e topográficas.",
     tags: ["PostgreSQL", "PostGIS", "TypeScript"],
     imageUrl: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=600&h=400",
-    githubUrl: "https://github.com/",
+    githubUrl: "https://github.com/rodolfom9",
     liveUrl: "#"
   },
 ];
@@ -47,7 +47,7 @@ const ProjectsSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             <span className="bg-gradient-to-r from-vaporwave-purple to-vaporwave-cyan bg-clip-text text-transparent">
-              Projetos
+              Projetos do Github
             </span>
           </h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
@@ -100,7 +100,7 @@ const ProjectsSection = () => {
         
         <div className="mt-16 text-center">
           <Button variant="outline" asChild className="border-primary/20 hover:bg-primary/10">
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+            <a href="https://github.com/rodolfom9" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               <Github size={18} />
               <span>Ver mais no GitHub</span>
             </a>

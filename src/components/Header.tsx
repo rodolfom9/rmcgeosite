@@ -34,7 +34,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <span className="text-2xl font-display font-semibold bg-gradient-to-r from-vaporwave-purple to-vaporwave-cyan bg-clip-text text-transparent">
-            CartoDev
+            RMCGEO
           </span>
         </div>
 
@@ -68,7 +68,7 @@ const Header = () => {
 
         <div className="flex items-center gap-3">
           <a 
-            href="https://github.com/" 
+            href="https://github.com/rodolfom9" 
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"

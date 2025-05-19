@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <div className="text-2xl font-display font-semibold bg-gradient-to-r from-vaporwave-purple to-vaporwave-cyan bg-clip-text text-transparent">
-              CartoDev
+              RMCGEO
             </div>
             <p className="text-sm text-foreground/60 mt-1">
               © {currentYear} · Todos os direitos reservados
@@ -62,7 +62,7 @@ const Footer = () => {
           
           <div className="mt-4 md:mt-0 flex items-center gap-4">
             <a 
-              href="https://github.com/" 
+              href="https://github.com/rodolfom9" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
