@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-/* Topographic line effect for loading animations */
+/* GIS Topographic line effect for loading animations */
 .topo-loading {
   background-image: repeating-linear-gradient(
     to right,
@@ -17,6 +17,25 @@
   );
   background-size: 200% 100%;
   animation: topo-shift 3s linear infinite;
+}
+
+/* GIS coordinate grid pattern */
+.coord-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(rgba(155, 135, 245, 0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(155, 135, 245, 0.1) 1px, transparent 1px);
+}
+
+/* GIS contour line pattern */
+.contour-lines {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(51, 195, 240, 0.1),
+    rgba(51, 195, 240, 0.1) 2px,
+    transparent 2px,
+    transparent 10px
+  );
 }
 
 @keyframes topo-shift {

@@ -1,5 +1,5 @@
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -12,15 +12,31 @@ const HeroSection = () => {
       id="home" 
       className="min-h-screen relative flex items-center pt-16 overflow-hidden"
     >
-      {/* Topographic Background */}
+      {/* GIS Grid Background */}
       <div 
-        className="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-30" 
+        className="absolute inset-0 bg-grid-pattern opacity-30" 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(155, 135, 245, 0.15) 1px, transparent 1px), linear-gradient(to right, rgba(155, 135, 245, 0.15) 1px, transparent 1px)' 
+          backgroundSize: '50px 50px',
+          backgroundImage: `
+            linear-gradient(rgba(155, 135, 245, 0.15) 1px, transparent 1px), 
+            linear-gradient(to right, rgba(155, 135, 245, 0.15) 1px, transparent 1px),
+            linear-gradient(rgba(51, 195, 240, 0.1) 5px, transparent 5px), 
+            linear-gradient(to right, rgba(51, 195, 240, 0.1) 5px, transparent 5px)
+          `
         }}
       />
       
-      {/* Map Contour Overlay */}
+      {/* Coordinate System Overlay */}
+      <div 
+        className="absolute inset-0 opacity-10"
+        style={{ 
+          backgroundImage: "radial-gradient(circle at 50% 50%, rgba(155, 135, 245, 0.3) 0%, transparent 70%)",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      />
+      
+      {/* Layer-like GIS Effect */}
       <div 
         className="absolute inset-0 opacity-5"
         style={{ 
@@ -67,16 +83,21 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Coordinate Grid Decorative Elements */}
-      <div className="hidden md:block absolute bottom-10 right-10 w-32 h-32 border-2 border-vaporwave-purple/30 rounded-full animate-float">
-        <div className="absolute inset-0 opacity-50" style={{ 
+      {/* GIS Map Elements */}
+      <div className="hidden md:block absolute bottom-10 right-10 w-40 h-40 border-2 border-vaporwave-purple/30 rounded-full animate-float">
+        <div className="absolute inset-0 opacity-60" style={{ 
           backgroundImage: "radial-gradient(circle, transparent 60%, rgba(155, 135, 245, 0.2) 60%, rgba(155, 135, 245, 0.2) 65%, transparent 65%)" 
         }}></div>
-        <div className="absolute inset-0 opacity-50" style={{ 
+        <div className="absolute inset-0 opacity-60" style={{ 
           backgroundImage: "linear-gradient(0deg, transparent 49%, rgba(155, 135, 245, 0.2) 49%, rgba(155, 135, 245, 0.2) 51%, transparent 51%), linear-gradient(90deg, transparent 49%, rgba(155, 135, 245, 0.2) 49%, rgba(155, 135, 245, 0.2) 51%, transparent 51%)"
         }}></div>
+        <Map className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-vaporwave-purple/50 h-8 w-8" />
       </div>
-      <div className="hidden md:block absolute top-40 right-20 w-16 h-16 border-2 border-vaporwave-cyan/30 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+      <div className="hidden md:block absolute top-40 right-20 w-20 h-20 border-2 border-vaporwave-cyan/30 rounded-full animate-float" style={{ animationDelay: '1s' }}>
+        <div className="absolute inset-0 opacity-40" style={{
+          backgroundImage: "linear-gradient(45deg, transparent 40%, rgba(51, 195, 240, 0.2) 40%, rgba(51, 195, 240, 0.2) 60%, transparent 60%)"
+        }}></div>
+      </div>
     </section>
   );
 };
