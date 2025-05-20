@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useTexture, Sphere } from '@react-three/drei';
+import * as THREE from 'three';
 
 const EarthSphere = ({ autoRotate = true }) => {
   const earthRef = useRef<THREE.Mesh>(null);
@@ -27,7 +28,7 @@ const EarthSphere = ({ autoRotate = true }) => {
         bumpMap={earthBumpMap}
         bumpScale={0.05}
         specularMap={earthSpecularMap}
-        specular={0x666666}
+        specular={new THREE.Color(0x666666)}
         shininess={20}
       />
     </Sphere>
