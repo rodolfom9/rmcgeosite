@@ -1,14 +1,8 @@
 
 import { ArrowRight, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Globe from "./Globe";
 
-/**
- * Hero section component for the landing page
- * Contains the main headline, call-to-action buttons, and 3D globe
- */
 const HeroSection = () => {
-  // Function to scroll to the projects section smoothly
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -18,7 +12,7 @@ const HeroSection = () => {
       id="home" 
       className="min-h-screen relative flex items-center pt-16 overflow-hidden"
     >
-      {/* GIS Grid Background - adds a topographic map feel */}
+      {/* GIS Grid Background */}
       <div 
         className="absolute inset-0 bg-grid-pattern opacity-30" 
         style={{ 
@@ -32,7 +26,7 @@ const HeroSection = () => {
         }}
       />
       
-      {/* Coordinate System Overlay - adds depth to background */}
+      {/* Coordinate System Overlay */}
       <div 
         className="absolute inset-0 opacity-10"
         style={{ 
@@ -42,44 +36,32 @@ const HeroSection = () => {
         }}
       />
       
-      {/* Simplified background pattern */}
+      {/* Layer-like GIS Effect */}
       <div 
-        className="absolute inset-0 opacity-15"
+        className="absolute inset-0 opacity-5"
         style={{ 
-          backgroundImage: `linear-gradient(rgba(51, 195, 240, 0.05) 0%, rgba(155, 135, 245, 0.05) 100%)`,
-          backgroundSize: 'cover',
+          backgroundImage: "url('https://images.unsplash.com/photo-1544985361-b420d7a77043?auto=format&fit=crop')", 
+          backgroundSize: 'cover', 
           backgroundPosition: 'center',
-          mixBlendMode: 'soft-light'
+          mixBlendMode: 'overlay'
         }}
       />
       
-      {/* Gradient Blobs - visual elements for depth */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-vaporwave-purple/20 rounded-full filter blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-vaporwave-cyan/20 rounded-full filter blur-3xl" />
+      {/* Gradient Blobs */}
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-vaporwave-purple/20 rounded-full filter blur-3xl animate-pulse-light" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-vaporwave-cyan/20 rounded-full filter blur-3xl animate-pulse-light" />
       
-      {/* 3D Globe - centered better in the layout */}
-      <div className="absolute w-full md:w-1/2 h-full pointer-events-none flex items-center justify-center">
-        <div className="w-full h-full pointer-events-auto">
-          <Globe className="opacity-85" />
-        </div>
-      </div>
-      
-      {/* Content Container */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto md:mr-auto md:ml-4">
-          {/* Category Label */}
+        <div className="max-w-3xl mx-auto md:mx-0">
           <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             Cartografia & Agrimensura
           </span>
-          {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-glow">
             Projetos de <span className="bg-gradient-to-r from-vaporwave-purple to-vaporwave-cyan bg-clip-text text-transparent">Mapeamento</span> & Topografia
           </h1>
-          {/* Description */}
           <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
             Explorando novos desafios com QGIS e python
           </p>
-          {/* Call-to-Action Buttons */}
           <div className="flex flex-wrap gap-4">
             <Button 
               onClick={scrollToProjects}
@@ -101,7 +83,21 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Removed GIS Map Elements for simplification */}
+      {/* GIS Map Elements */}
+      <div className="hidden md:block absolute bottom-10 right-10 w-40 h-40 border-2 border-vaporwave-purple/30 rounded-full animate-float">
+        <div className="absolute inset-0 opacity-60" style={{ 
+          backgroundImage: "radial-gradient(circle, transparent 60%, rgba(155, 135, 245, 0.2) 60%, rgba(155, 135, 245, 0.2) 65%, transparent 65%)" 
+        }}></div>
+        <div className="absolute inset-0 opacity-60" style={{ 
+          backgroundImage: "linear-gradient(0deg, transparent 49%, rgba(155, 135, 245, 0.2) 49%, rgba(155, 135, 245, 0.2) 51%, transparent 51%), linear-gradient(90deg, transparent 49%, rgba(155, 135, 245, 0.2) 49%, rgba(155, 135, 245, 0.2) 51%, transparent 51%)"
+        }}></div>
+        <Map className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-vaporwave-purple/50 h-8 w-8" />
+      </div>
+      <div className="hidden md:block absolute top-40 right-20 w-20 h-20 border-2 border-vaporwave-cyan/30 rounded-full animate-float" style={{ animationDelay: '1s' }}>
+        <div className="absolute inset-0 opacity-40" style={{
+          backgroundImage: "linear-gradient(45deg, transparent 40%, rgba(51, 195, 240, 0.2) 40%, rgba(51, 195, 240, 0.2) 60%, transparent 60%)"
+        }}></div>
+      </div>
     </section>
   );
 };
