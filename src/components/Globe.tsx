@@ -1,23 +1,24 @@
 
-import React, { useState, useRef, useEffect } from 'react';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import React, { useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 const EarthSphere = ({ autoRotate = true }) => {
-  const meshRef = useRef(null);
+  const meshRef = useRef<THREE.Mesh>(null);
+  
+  // Create texture loader
+  const textureLoader = new THREE.TextureLoader();
   
   // Define texture URLs
   const earthMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg';
   const earthBumpMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_normal_2048.jpg';
   const earthSpecularMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_specular_2048.jpg';
 
-  // Load textures using useLoader hook from react-three-fiber
-  const [earthMap, bumpMap, specularMap] = useLoader(THREE.TextureLoader, [
-    earthMapUrl,
-    earthBumpMapUrl,
-    earthSpecularMapUrl
-  ]);
+  // Pre-load textures
+  const earthMap = textureLoader.load(earthMapUrl);
+  const bumpMap = textureLoader.load(earthBumpMapUrl);
+  const specularMap = textureLoader.load(earthSpecularMapUrl);
   
   // Auto-rotation animation
   useFrame(() => {
@@ -34,19 +35,10 @@ const EarthSphere = ({ autoRotate = true }) => {
         bumpMap={bumpMap}
         bumpScale={0.05}
         specularMap={specularMap}
-        specular={new THREE.Color("#666666")}
+        specular="#666666"
         shininess={20}
       />
     </mesh>
-  );
-};
-
-// Preload component to handle suspense
-const GlobeWithLoader = (props) => {
-  return (
-    <React.Suspense fallback={<span>Loading Earth...</span>}>
-      <EarthSphere {...props} />
-    </React.Suspense>
   );
 };
 
@@ -60,7 +52,7 @@ const Globe = ({ className }: GlobeProps) => {
       <Canvas camera={{ position: [0, 0, 2.5], fov: 45 }}>
         <ambientLight intensity={0.8} />
         <directionalLight intensity={1} position={[5, 3, 5]} />
-        <GlobeWithLoader />
+        <EarthSphere />
         <OrbitControls 
           enableZoom={false}
           enablePan={false}
