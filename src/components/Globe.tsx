@@ -5,6 +5,7 @@ import { OrbitControls, useTexture, Sphere } from '@react-three/drei';
 import * as THREE from 'three';
 
 const EarthSphere = ({ autoRotate = true }) => {
+  // Create a properly typed ref for the mesh
   const meshRef = useRef<THREE.Mesh>(null);
   
   // Earth texture maps
@@ -22,16 +23,17 @@ const EarthSphere = ({ autoRotate = true }) => {
   });
 
   return (
-    <Sphere ref={meshRef} args={[1, 64, 64]}>
+    <mesh ref={meshRef}>
+      <sphereGeometry args={[1, 64, 64]} />
       <meshPhongMaterial
         map={earthMap}
         bumpMap={earthBumpMap}
         bumpScale={0.05}
         specularMap={earthSpecularMap}
-        specular={0x666666}
+        specular={new THREE.Color(0x666666)}
         shininess={20}
       />
-    </Sphere>
+    </mesh>
   );
 };
 
