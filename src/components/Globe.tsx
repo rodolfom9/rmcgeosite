@@ -5,8 +5,8 @@ import { OrbitControls, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 const EarthSphere = ({ autoRotate = true }) => {
-  // Create a ref with correct typing that matches what r3f expects
-  const meshRef = React.useRef<THREE.Mesh>(null!);
+  // Create a ref that's compatible with React Three Fiber
+  const meshRef = React.useRef<THREE.Mesh>(null);
   
   // Earth texture maps
   const [earthMap, earthBumpMap, earthSpecularMap] = useTexture([
