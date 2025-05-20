@@ -5,7 +5,7 @@ import { OrbitControls, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 const EarthSphere = ({ autoRotate = true }) => {
-  // Create a ref with proper type annotation
+  // Create a ref with proper type annotation - important to use forwardRef for proper typing
   const meshRef = useRef<THREE.Mesh>(null);
   
   // Earth texture maps
