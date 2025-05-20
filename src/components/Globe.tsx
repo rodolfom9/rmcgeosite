@@ -5,8 +5,8 @@ import { OrbitControls, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 const EarthSphere = ({ autoRotate = true }) => {
-  // Create a ref with proper type annotation - important to use forwardRef for proper typing
-  const meshRef = useRef<THREE.Mesh>(null);
+  // Create a ref with proper type annotation
+  const meshRef = useRef<THREE.Mesh | null>(null);
   
   // Earth texture maps
   const [earthMap, earthBumpMap, earthSpecularMap] = useTexture([
@@ -30,7 +30,7 @@ const EarthSphere = ({ autoRotate = true }) => {
         bumpMap={earthBumpMap}
         bumpScale={0.05}
         specularMap={earthSpecularMap}
-        specular={'#666666'}
+        specular={new THREE.Color('#666666')}
         shininess={20}
       />
     </mesh>
