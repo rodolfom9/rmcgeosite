@@ -5,7 +5,7 @@ import { OrbitControls, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 const EarthSphere = ({ autoRotate = true }) => {
-  // Create a ref that's compatible with React Three Fiber
+  // Create a ref that's compatible with React Three Fiber's expectations
   const meshRef = React.useRef<THREE.Mesh>(null);
   
   // Earth texture maps
@@ -30,7 +30,7 @@ const EarthSphere = ({ autoRotate = true }) => {
         bumpMap={earthBumpMap}
         bumpScale={0.05}
         specularMap={earthSpecularMap}
-        specular="#666666"
+        specular={new THREE.Color("#666666")}
         shininess={20}
       />
     </mesh>
