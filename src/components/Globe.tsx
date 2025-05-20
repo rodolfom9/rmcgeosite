@@ -1,9 +1,9 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
+// Simple Earth sphere component without using OrbitControls from drei
 const EarthSphere = ({ autoRotate = true }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   
@@ -35,11 +35,26 @@ const EarthSphere = ({ autoRotate = true }) => {
         bumpMap={bumpMap}
         bumpScale={0.05}
         specularMap={specularMap}
-        specular="#666666"
+        specular={new THREE.Color("#666666")}
         shininess={20}
       />
     </mesh>
   );
+};
+
+// Simple orbit controls implementation without using drei
+const SimpleOrbitControls = () => {
+  const groupRef = useRef<THREE.Group>(null);
+  
+  useFrame(({ clock, camera }) => {
+    if (groupRef.current) {
+      // Auto-rotate camera around the scene
+      const t = clock.getElapsedTime() * 0.1;
+      groupRef.current.rotation.y = t * 0.5;
+    }
+  });
+
+  return <group ref={groupRef}></group>;
 };
 
 interface GlobeProps {
@@ -53,13 +68,7 @@ const Globe = ({ className }: GlobeProps) => {
         <ambientLight intensity={0.8} />
         <directionalLight intensity={1} position={[5, 3, 5]} />
         <EarthSphere />
-        <OrbitControls 
-          enableZoom={false}
-          enablePan={false}
-          rotateSpeed={0.5}
-          autoRotate={true}
-          autoRotateSpeed={0.5}
-        />
+        <SimpleOrbitControls />
       </Canvas>
     </div>
   );
