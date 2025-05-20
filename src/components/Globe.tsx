@@ -3,71 +3,92 @@ import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-// Simple Earth sphere component without using OrbitControls from drei
+/**
+ * Earth sphere component that renders a textured globe
+ * @param autoRotate Controls whether the globe automatically rotates
+ */
 const EarthSphere = ({ autoRotate = true }) => {
+  // Reference to the mesh to manipulate it in animations
   const meshRef = useRef<THREE.Mesh>(null);
   
-  // Create texture loader
+  // Create texture loader for Earth textures
   const textureLoader = new THREE.TextureLoader();
   
-  // Define texture URLs
+  // Define texture URLs for Earth map, bump map and specular map
   const earthMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg';
   const earthBumpMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_normal_2048.jpg';
   const earthSpecularMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_specular_2048.jpg';
 
-  // Pre-load textures
+  // Load textures
   const earthMap = textureLoader.load(earthMapUrl);
   const bumpMap = textureLoader.load(earthBumpMapUrl);
   const specularMap = textureLoader.load(earthSpecularMapUrl);
   
-  // Auto-rotation animation
+  // Animation hook for auto-rotation
   useFrame(() => {
     if (meshRef.current && autoRotate) {
+      // Rotate the globe slowly around Y axis
       meshRef.current.rotation.y += 0.002;
     }
   });
 
   return (
     <mesh ref={meshRef}>
+      {/* Sphere geometry parameters: radius, widthSegments, heightSegments */}
       <sphereGeometry args={[1, 64, 64]} />
       <meshPhongMaterial
         map={earthMap}
         bumpMap={bumpMap}
         bumpScale={0.05}
         specularMap={specularMap}
-        specular={new THREE.Color("#666666")}
+        // Fix the specular color by using a string instead of THREE.Color
+        specular="#666666"
         shininess={20}
       />
     </mesh>
   );
 };
 
-// Simple orbit controls implementation without using drei
+/**
+ * Simple orbit controls that rotate the scene without requiring the drei library
+ */
 const SimpleOrbitControls = () => {
+  // Reference to the group that will be rotated
   const groupRef = useRef<THREE.Group>(null);
   
-  useFrame(({ clock, camera }) => {
+  // Animation hook for camera movement
+  useFrame(({ clock }) => {
     if (groupRef.current) {
-      // Auto-rotate camera around the scene
+      // Calculate rotation based on elapsed time for smooth animation
       const t = clock.getElapsedTime() * 0.1;
       groupRef.current.rotation.y = t * 0.5;
     }
   });
 
-  return <group ref={groupRef}></group>;
+  return <group ref={groupRef}><EarthSphere /></group>;
 };
 
+/**
+ * Globe component props
+ */
 interface GlobeProps {
-  className?: string;
+  className?: string; // Optional class name for styling
 }
 
+/**
+ * Main Globe component that renders a 3D Earth sphere
+ * Positioned to be more centered on the page
+ */
 const Globe = ({ className }: GlobeProps) => {
   return (
     <div className={`${className || ''} relative h-full w-full`}>
-      <Canvas camera={{ position: [0, 0, 2.5], fov: 45 }}>
+      {/* Canvas for 3D rendering with adjusted camera position */}
+      <Canvas camera={{ position: [0, 0, 2.2], fov: 45 }}>
+        {/* Ambient light for basic scene illumination */}
         <ambientLight intensity={0.8} />
+        {/* Directional light to create highlights and shadows */}
         <directionalLight intensity={1} position={[5, 3, 5]} />
-        <EarthSphere />
+        {/* Controls and Earth component */}
         <SimpleOrbitControls />
       </Canvas>
     </div>
