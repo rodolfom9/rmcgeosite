@@ -1,6 +1,7 @@
 
 import { ArrowRight, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Globe from "./Globe";
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -54,6 +55,13 @@ const HeroSection = () => {
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-vaporwave-purple/20 rounded-full filter blur-3xl animate-pulse-light" />
       <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-vaporwave-cyan/20 rounded-full filter blur-3xl animate-pulse-light" />
       
+      {/* 3D Globe */}
+      <div className="absolute right-0 md:w-1/3 lg:w-2/5 h-full pointer-events-none">
+        <div className="w-full h-full pointer-events-auto">
+          <Globe className="opacity-85" />
+        </div>
+      </div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto md:mx-0">
           <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -87,7 +95,7 @@ const HeroSection = () => {
       </div>
       
       {/* GIS Map Elements */}
-      <div className="hidden md:block absolute bottom-10 right-10 w-40 h-40 border-2 border-vaporwave-purple/30 rounded-full animate-float">
+      <div className="hidden md:block absolute bottom-10 left-10 w-40 h-40 border-2 border-vaporwave-purple/30 rounded-full animate-float">
         <div className="absolute inset-0 opacity-60" style={{ 
           backgroundImage: "radial-gradient(circle, transparent 60%, rgba(155, 135, 245, 0.2) 60%, rgba(155, 135, 245, 0.2) 65%, transparent 65%)" 
         }}></div>
@@ -95,11 +103,6 @@ const HeroSection = () => {
           backgroundImage: "linear-gradient(0deg, transparent 49%, rgba(155, 135, 245, 0.2) 49%, rgba(155, 135, 245, 0.2) 51%, transparent 51%), linear-gradient(90deg, transparent 49%, rgba(155, 135, 245, 0.2) 49%, rgba(155, 135, 245, 0.2) 51%, transparent 51%)"
         }}></div>
         <Map className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-vaporwave-purple/50 h-8 w-8" />
-      </div>
-      <div className="hidden md:block absolute top-40 right-20 w-20 h-20 border-2 border-vaporwave-cyan/30 rounded-full animate-float" style={{ animationDelay: '1s' }}>
-        <div className="absolute inset-0 opacity-40" style={{
-          backgroundImage: "linear-gradient(45deg, transparent 40%, rgba(51, 195, 240, 0.2) 40%, rgba(51, 195, 240, 0.2) 60%, transparent 60%)"
-        }}></div>
       </div>
     </section>
   );
