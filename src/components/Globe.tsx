@@ -5,7 +5,7 @@ import { OrbitControls, useTexture, Sphere } from '@react-three/drei';
 import * as THREE from 'three';
 
 const EarthSphere = ({ autoRotate = true }) => {
-  const earthRef = useRef<THREE.Mesh>(null);
+  const meshRef = useRef<THREE.Mesh>(null);
   
   // Earth texture maps
   const [earthMap, earthBumpMap, earthSpecularMap] = useTexture([
@@ -16,15 +16,14 @@ const EarthSphere = ({ autoRotate = true }) => {
 
   // Auto-rotation animation
   useFrame(({ clock }) => {
-    if (autoRotate && earthRef.current) {
-      earthRef.current.rotation.y = clock.getElapsedTime() * 0.1;
+    if (autoRotate && meshRef.current) {
+      meshRef.current.rotation.y = clock.getElapsedTime() * 0.1;
     }
   });
 
   return (
-    <Sphere args={[1, 64, 64]}>
+    <Sphere ref={meshRef} args={[1, 64, 64]}>
       <meshPhongMaterial
-        ref={earthRef}
         map={earthMap}
         bumpMap={earthBumpMap}
         bumpScale={0.05}
