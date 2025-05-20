@@ -7,82 +7,82 @@
 
 @layer base {
   :root {
-    --background: 240 30% 98%;
-    --foreground: 240 10% 10%;
+    --background: 210 40% 98%;
+    --foreground: 210 10% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 10%;
+    --card-foreground: 210 10% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
+    --popover-foreground: 210 10% 10%;
 
-    --primary: 270 70% 75%;
+    --primary: 100 45% 40%;  /* QGIS Green */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 190 77% 57%;
+    --secondary: 195 65% 57%; /* QGIS Blue */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 10% 94%;
-    --muted-foreground: 240 5% 50%;
+    --muted: 210 10% 94%;
+    --muted-foreground: 210 5% 50%;
 
-    --accent: 276 77% 85%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 195 65% 87%;  /* Light QGIS Blue */
+    --accent-foreground: 210 10% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 90%;
-    --input: 240 10% 90%;
-    --ring: 270 70% 75%;
+    --border: 210 10% 90%;
+    --input: 210 10% 90%;
+    --ring: 100 45% 40%;  /* QGIS Green */
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 210 5.3% 26.1%;
+    --sidebar-primary: 210 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent: 210 4.8% 95.9%;
+    --sidebar-accent-foreground: 210 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 240 10% 6%;
+    --background: 210 25% 8%;  /* Dark blue-gray for QGIS night theme */
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 8%;
+    --card: 210 25% 10%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 8%;
+    --popover: 210 25% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 270 70% 75%;
-    --primary-foreground: 240 10% 10%;
+    --primary: 100 45% 40%;  /* QGIS Green */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 190 77% 57%;
-    --secondary-foreground: 240 10% 10%;
+    --secondary: 195 65% 57%;  /* QGIS Blue */
+    --secondary-foreground: 210 10% 10%;
 
-    --muted: 240 10% 16%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 210 25% 16%;
+    --muted-foreground: 210 5% 64.9%;
 
-    --accent: 276 77% 85%;
-    --accent-foreground: 240 10% 10%;
+    --accent: 195 65% 25%;  /* Darker QGIS Blue */
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 16%;
-    --input: 240 10% 16%;
-    --ring: 270 70% 75%;
+    --border: 210 25% 16%;
+    --input: 210 25% 16%;
+    --ring: 100 45% 40%;  /* QGIS Green */
     
-    --sidebar-background: 240 10% 8%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 270 70% 75%;
+    --sidebar-background: 210 25% 10%;
+    --sidebar-foreground: 210 4.8% 95.9%;
+    --sidebar-primary: 100 45% 40%;  /* QGIS Green */
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 10% 16%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 10% 16%;
+    --sidebar-accent: 210 25% 16%;
+    --sidebar-accent-foreground: 210 4.8% 95.9%;
+    --sidebar-border: 210 25% 16%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -104,11 +104,22 @@
   }
   
   .text-glow {
-    text-shadow: 0 0 10px rgba(155, 135, 245, 0.5);
+    text-shadow: 0 0 10px rgba(88, 150, 50, 0.5);  /* QGIS Green glow */
   }
   
   .neon-border {
-    box-shadow: 0 0 5px rgba(155, 135, 245, 0.5),
-                0 0 10px rgba(155, 135, 245, 0.3);
+    box-shadow: 0 0 5px rgba(88, 150, 50, 0.5),
+                0 0 10px rgba(88, 150, 50, 0.3);  /* QGIS Green shadow */
+  }
+
+  /* QGIS specific styling utilities */
+  .qgis-layer-shadow {
+    box-shadow: 0 0 10px rgba(76, 184, 218, 0.3);  /* Blue shadow for layer-like effects */
+  }
+  
+  .qgis-grid {
+    background-size: 20px 20px;
+    background-image: linear-gradient(rgba(88, 150, 50, 0.1) 1px, transparent 1px), 
+                      linear-gradient(to right, rgba(88, 150, 50, 0.1) 1px, transparent 1px);
   }
 }

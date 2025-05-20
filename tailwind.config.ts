@@ -64,6 +64,13 @@ export default {
 					blue: '#D3E4FD',
 					cyan: '#33C3F0',
 				},
+				qgis: {
+					green: '#589632', // QGIS logo color
+					blue: '#4CB8DA',  // QGIS UI accent color
+					dark: '#1A1F2C',  // Dark shade for backgrounds
+					gray: '#8E9196',  // Neutral UI color
+					light: '#F1F0FB'   // Light UI background color
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -96,6 +103,10 @@ export default {
 				'pulse-light': {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.7' },
+				},
+				'rotate-globe': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' },
 				}
 			},
 			animation: {
@@ -103,10 +114,12 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-light': 'pulse-light 4s ease-in-out infinite',
+				'rotate-globe': 'rotate-globe 60s linear infinite',
 			},
 			backgroundImage: {
 				'gradient-vaporwave': 'linear-gradient(90deg, #9b87f5 0%, #33C3F0 100%)',
-				'grid-pattern': 'linear-gradient(rgba(155, 135, 245, 0.15) 1px, transparent 1px), linear-gradient(to right, rgba(155, 135, 245, 0.15) 1px, transparent 1px)',
+				'gradient-qgis': 'linear-gradient(90deg, #589632 0%, #4CB8DA 100%)',
+				'grid-pattern': 'linear-gradient(rgba(88, 150, 50, 0.15) 1px, transparent 1px), linear-gradient(to right, rgba(88, 150, 50, 0.15) 1px, transparent 1px)',
 			}
 		}
 	},
