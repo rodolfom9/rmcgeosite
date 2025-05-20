@@ -1,49 +1,36 @@
 
 import React, { useRef } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 const EarthSphere = ({ autoRotate = true }) => {
-  const meshRef = useRef(null);
+  const meshRef = useRef<THREE.Mesh>(null);
   
   // Define texture URLs
   const earthMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg';
   const earthBumpMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_normal_2048.jpg';
   const earthSpecularMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_specular_2048.jpg';
 
-  // Manually create textures instead of using useTexture hook
-  const earthTexture = new THREE.TextureLoader().load(earthMapUrl);
-  const bumpTexture = new THREE.TextureLoader().load(earthBumpMapUrl);
-  const specularTexture = new THREE.TextureLoader().load(earthSpecularMapUrl);
+  // Create texture loader
+  const textureLoader = new THREE.TextureLoader();
   
-  // Auto-rotation animation
-  React.useEffect(() => {
-    if (!meshRef.current || !autoRotate) return;
-    
-    const animate = () => {
-      if (meshRef.current) {
-        meshRef.current.rotation.y += 0.002;
-      }
-      animationFrameId = window.requestAnimationFrame(animate);
-    };
-    
-    let animationFrameId = window.requestAnimationFrame(animate);
-    
-    return () => {
-      window.cancelAnimationFrame(animationFrameId);
-    };
-  }, [autoRotate]);
+  // Auto-rotation animation using useFrame instead of useEffect
+  useFrame(() => {
+    if (meshRef.current && autoRotate) {
+      meshRef.current.rotation.y += 0.002;
+    }
+  });
 
   return (
     <mesh ref={meshRef}>
       <sphereGeometry args={[1, 64, 64]} />
       <meshPhongMaterial
-        map={earthTexture}
-        bumpMap={bumpTexture}
+        map={textureLoader.load(earthMapUrl)}
+        bumpMap={textureLoader.load(earthBumpMapUrl)}
         bumpScale={0.05}
-        specularMap={specularTexture}
-        specular="#666666"
+        specularMap={textureLoader.load(earthSpecularMapUrl)}
+        specular={"#666666"}
         shininess={20}
       />
     </mesh>
