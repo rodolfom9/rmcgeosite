@@ -22,13 +22,14 @@ const EarthSphere = ({ autoRotate = true }) => {
   });
 
   return (
-    <Sphere ref={earthRef} args={[1, 64, 64]}>
+    <Sphere args={[1, 64, 64]}>
       <meshPhongMaterial
+        ref={earthRef}
         map={earthMap}
         bumpMap={earthBumpMap}
         bumpScale={0.05}
         specularMap={earthSpecularMap}
-        specular={new THREE.Color(0x666666)}
+        specular={0x666666}
         shininess={20}
       />
     </Sphere>
