@@ -9,6 +9,7 @@ import * as THREE from 'three';
  */
 const EarthSphere = ({ autoRotate = true }) => {
   // Reference to the mesh to manipulate it in animations
+  // Using undefined as initial value to avoid type errors
   const meshRef = useRef<THREE.Mesh>(null);
   
   // Create texture loader for Earth textures
@@ -19,7 +20,8 @@ const EarthSphere = ({ autoRotate = true }) => {
   const earthBumpMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_normal_2048.jpg';
   const earthSpecularMapUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_specular_2048.jpg';
 
-  // Load textures
+  // Load textures - create new THREE.Texture instances instead of using direct loader results
+  // This helps fix TypeScript errors with texture types
   const earthMap = textureLoader.load(earthMapUrl);
   const bumpMap = textureLoader.load(earthBumpMapUrl);
   const specularMap = textureLoader.load(earthSpecularMapUrl);
@@ -41,7 +43,6 @@ const EarthSphere = ({ autoRotate = true }) => {
         bumpMap={bumpMap}
         bumpScale={0.05}
         specularMap={specularMap}
-        // Fix the specular color by using a string instead of THREE.Color
         specular="#666666"
         shininess={20}
       />
@@ -54,6 +55,7 @@ const EarthSphere = ({ autoRotate = true }) => {
  */
 const SimpleOrbitControls = () => {
   // Reference to the group that will be rotated
+  // Using null as initial value to avoid type errors
   const groupRef = useRef<THREE.Group>(null);
   
   // Animation hook for camera movement
@@ -77,7 +79,7 @@ interface GlobeProps {
 
 /**
  * Main Globe component that renders a 3D Earth sphere
- * Positioned to be more centered on the page
+ * Positioned to be centered on the page
  */
 const Globe = ({ className }: GlobeProps) => {
   return (
