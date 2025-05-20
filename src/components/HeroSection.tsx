@@ -36,14 +36,17 @@ const HeroSection = () => {
         }}
       />
       
-      {/* Layer-like GIS Effect */}
+      {/* Cartographic Map Background */}
       <div 
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-15"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1544985361-b420d7a77043?auto=format&fit=crop')", 
-          backgroundSize: 'cover', 
+          backgroundImage: `
+            linear-gradient(rgba(51, 195, 240, 0.05) 0%, rgba(155, 135, 245, 0.05) 100%),
+            url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='contourLines' patternUnits='userSpaceOnUse' width='100' height='100' patternTransform='rotate(30)'%3E%3Cpath d='M 0,50 C 20,40 40,40 50,50 C 60,60 80,60 100,50 M 0,100 C 20,90 40,90 50,100' stroke='rgba(155, 135, 245, 0.2)' stroke-width='1' fill='none'/%3E%3C/pattern%3E%3Cpattern id='contourLines2' patternUnits='userSpaceOnUse' width='120' height='120' patternTransform='rotate(60)'%3E%3Cpath d='M 0,50 C 30,30 90,30 120,50 M 0,100 C 30,80 90,80 120,100' stroke='rgba(51, 195, 240, 0.15)' stroke-width='1.5' fill='none'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23contourLines)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23contourLines2)'/%3E%3C/svg%3E")
+          `,
+          backgroundSize: 'cover',
           backgroundPosition: 'center',
-          mixBlendMode: 'overlay'
+          mixBlendMode: 'soft-light'
         }}
       />
       
