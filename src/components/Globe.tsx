@@ -6,7 +6,7 @@ import * as THREE from 'three';
 
 const EarthSphere = ({ autoRotate = true }) => {
   // Create a ref that's compatible with React Three Fiber's expectations
-  const meshRef = React.useRef<THREE.Mesh>(null);
+  const meshRef = React.useRef(null);
   
   // Earth texture maps
   const [earthMap, earthBumpMap, earthSpecularMap] = useTexture([
@@ -30,7 +30,7 @@ const EarthSphere = ({ autoRotate = true }) => {
         bumpMap={earthBumpMap}
         bumpScale={0.05}
         specularMap={earthSpecularMap}
-        specular={new THREE.Color("#666666")}
+        specular="#666666"
         shininess={20}
       />
     </mesh>
