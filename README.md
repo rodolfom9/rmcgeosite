@@ -1,73 +1,95 @@
-# Welcome to your Lovable project
+# RMCGEO - Site Institucional
 
-## Project info
+Este é o site institucional da RMCGEO, desenvolvido com tecnologias modernas e de fácil manutenção.
 
-**URL**: https://lovable.dev/projects/f0bb7ca7-dff5-4f2b-bd15-5403510737b7
+## 📁 Estrutura do Projeto
 
-## How can I edit this code?
+```
+src/
+├── components/     # Componentes reutilizáveis
+│   ├── Header.tsx      # Cabeçalho do site
+│   ├── Footer.tsx      # Rodapé do site
+│   ├── HeroSection.tsx # Seção principal
+│   └── ...
+├── pages/         # Páginas do site
+├── styles/        # Arquivos de estilo
+└── assets/        # Imagens e outros recursos
+```
 
-There are several ways of editing your application.
+## 🎨 Componentes Principais
 
-**Use Lovable**
+1. **Header (Cabeçalho)**
+   - Logo RMCGEO
+   - Menu de navegação
+   - Botão de tema claro/escuro
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f0bb7ca7-dff5-4f2b-bd15-5403510737b7) and start prompting.
+2. **HeroSection (Seção Principal)**
+   - Título principal
+   - Descrição
+   - Botões de ação
+   - Elementos decorativos
 
-Changes made via Lovable will be committed automatically to this repo.
+3. **Footer (Rodapé)**
+   - Informações de contato
+   - Links úteis
+   - Redes sociais
 
-**Use your preferred IDE**
+## 🛠️ Tecnologias Utilizadas
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **React**: Biblioteca para construir interfaces
+- **TypeScript**: Adiciona tipagem ao JavaScript
+- **Tailwind CSS**: Framework para estilização
+- **Framer Motion**: Biblioteca para animações
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Como Executar
 
-Follow these steps:
+1. Instale as dependências:
+```bash
+npm install
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. Execute o projeto:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+3. Acesse o site:
+```
+http://localhost:5173
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📝 Como Editar
 
-**Use GitHub Codespaces**
+### Para mudar textos:
+- Abra o arquivo do componente desejado
+- Procure o texto que deseja alterar
+- Faça a alteração e salve
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Para mudar cores:
+- Abra `src/index.css`
+- Procure as variáveis de cor (começam com --)
+- Altere os valores conforme necessário
 
-## What technologies are used for this project?
+### Para mudar imagens:
+- Coloque a nova imagem em `src/assets`
+- Atualize o caminho no componente desejado
 
-This project is built with:
+## 🎯 Dicas para Manutenção
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **Cores do Site**
+   - Verde principal: #4CAF50
+   - Amarelo secundário: #FFEB3B
+   - Cores podem ser ajustadas em `src/index.css`
 
-## How can I deploy this project?
+2. **Fontes**
+   - Título: Orbitron
+   - Texto: Inter
+   - Configuradas em `src/index.css`
 
-Simply open [Lovable](https://lovable.dev/projects/f0bb7ca7-dff5-4f2b-bd15-5403510737b7) and click on Share -> Publish.
+3. **Animações**
+   - Usam Framer Motion
+   - Podem ser ajustadas nos componentes
 
-## Can I connect a custom domain to my Lovable project?
+## 📞 Suporte
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Para dúvidas ou sugestões, entre em contato através do email: [seu-email@exemplo.com]
