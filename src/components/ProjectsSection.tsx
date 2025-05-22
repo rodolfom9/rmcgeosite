@@ -30,15 +30,17 @@ const projects = [
     imageUrl: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=600&h=400",
     githubUrl: "https://github.com/rodolfom9/rmcgeoleite",
     liveUrl: "/rmcgeoleite",
+    accessUrl: "https://agroleite.rmcgeo.com.br/",
   },
   {
     id: 3,
-    title: "GeoDatabase",
-    description: "Banco de dados geográfico para armazenamento e consulta de informações cadastrais e topográficas.",
-    tags: ["PostgreSQL", "PostGIS", "TypeScript"],
+    title: "Fluxo Curricular",
+    description: "Sistema web para gerenciamento e visualização do fluxo curricular do curso de Engenharia Cartográfica e de Agrimensura do IFG.",
+    tags: ["React", "TypeScript", "Supabase", "Tailwind", "shadcn/ui"],
     imageUrl: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=600&h=400",
-    githubUrl: "https://github.com/rodolfom9",
-    liveUrl: "#"
+    githubUrl: "https://github.com/rodolfom9/engcartagri",
+    liveUrl: "/engcartagri",
+    accessUrl: "https://engcartagri.rmcgeo.com",
   },
 ];
 
@@ -119,6 +121,19 @@ const ProjectsSection = () => {
                       <span className="group-hover/link:text-primary transition-colors duration-300">Código</span>
                     </a>
                   </Button>
+                  {project.accessUrl && (
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      asChild
+                      className="group/link"
+                    >
+                      <a href={project.accessUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <LinkIcon size={16} className="group-hover/link:text-primary transition-colors duration-300" />
+                        <span className="group-hover/link:text-primary transition-colors duration-300">Acessar</span>
+                      </a>
+                    </Button>
+                  )}
                   <Button 
                     variant="ghost" 
                     size="sm" 

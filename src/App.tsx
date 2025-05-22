@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Rmcgeo2Demo from "@/pages/Rmcgeo2Demo";
 import RmcgeoleiteDemo from "@/pages/RmcgeoleiteDemo";
+import EngcartagriDemo from "@/pages/EngcartagriDemo";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             } />
             <Route path="/rmcgeo2" element={<Rmcgeo2Demo />} />
             <Route path="/rmcgeoleite" element={<RmcgeoleiteDemo />} />
+            <Route path="/engcartagri" element={<EngcartagriDemo />} />
           </Routes>
           <Footer />
         </div>
