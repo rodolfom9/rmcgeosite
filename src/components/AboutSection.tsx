@@ -6,7 +6,7 @@ const skills = [
   {
     icon: <Map className="h-8 w-8 text-primary" />,
     title: "Cartografia",
-    description: "Desenvolvimento de mapas digitais, Sistemas de Informações Geográficas (SIG) e visualização de dados espaciais."
+    description: "Desenvolvimento de mapas digitais, Desenvolvimento de PLugins no QGIS (Sistema de Informaçao Geográfica)."
   },
   {
     icon: <Ruler className="h-8 w-8 text-primary" />,
@@ -16,12 +16,12 @@ const skills = [
   {
     icon: <Compass className="h-8 w-8 text-primary" />,
     title: "Geotecnologias",
-    description: "Utilização de drones para mapeamento, processamento de dados LIDAR e fotogrametria digital."
+    description: "Null."
   },
   {
     icon: <Landmark className="h-8 w-8 text-primary" />,
     title: "Gestão Territorial",
-    description: "Análise espacial, planejamento territorial e regularização fundiária com uso de tecnologias modernas."
+    description: "Null."
   }
 ];
 

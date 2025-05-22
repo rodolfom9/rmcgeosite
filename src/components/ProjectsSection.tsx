@@ -40,7 +40,7 @@ const projects = [
     imageUrl: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=600&h=400",
     githubUrl: "https://github.com/rodolfom9/engcartagri",
     liveUrl: "/engcartagri",
-    accessUrl: "https://engcartagri.rmcgeo.com",
+    accessUrl: "https://engcartagri.rmcgeo.com.br",
   },
 ];
 

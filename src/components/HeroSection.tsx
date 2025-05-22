@@ -87,10 +87,10 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Projetos de{" "}
+            Projetinhos{" "}
             <span className="relative inline-block mr-4">
               <span className="bg-gradient-to-r from-[#4CAF50] to-[#FFEB3B] bg-clip-text text-transparent">
-                Mapeamento
+                Qgis, Web...
               </span>
               {/* Linha decorativa sob "Mapeamento" */}
               <motion.div
@@ -101,7 +101,7 @@ const HeroSection = () => {
                 aria-hidden="true"
               />
             </span>
-            <span className="inline-block mt-4">& Topografia</span>
+            <span className="inline-block mt-4">Cartografia & Agrimensura</span>
           </motion.h1>
 
           {/* Subtítulo */}
@@ -111,7 +111,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            Explorando novos desafios com QGIS e Python
+            Site pessoal para testar minhas ferramentas em software open source.
           </motion.p>
 
           {/* Botões de ação */}
