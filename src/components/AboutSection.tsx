@@ -98,13 +98,13 @@ const AboutSection = () => {
               className="space-y-4"
             >
               <p className="text-foreground/70 leading-relaxed text-lg">
-                Sou um profissional apaixonado por cartografia e agrimensura, com formação técnica na área e especialização em desenvolvimento de soluções digitais para geociências.
+              Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento/Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento
               </p>
               <p className="text-foreground/70 leading-relaxed text-lg">
-                Meu trabalho combina conhecimentos tradicionais de topografia e geodésia com tecnologias modernas como processamento de imagens, programação e sistemas de informações geográficas.
+              Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento /Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento
               </p>
               <p className="text-foreground/70 leading-relaxed text-lg">
-                Estou constantemente explorando novas ferramentas e metodologias para aprimorar a coleta, processamento e visualização de dados geoespaciais, sempre buscando soluções inovadoras para os desafios da área.
+              Não e facil criar a porcaria de um site / Ainda em Desenvolvimento / Ainda em Desenvolvimento
               </p>
             </motion.div>
           </motion.div>
