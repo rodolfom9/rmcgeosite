@@ -1,28 +1,35 @@
-import { Github, Link, ArrowUpRight } from "lucide-react";
+import { Github, Link as LinkIcon, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Sample project data - replace with your own
 const projects = [
   {
     id: 1,
-    title: "GeoMapeamento",
-    description: "Sistema para mapeamento de propriedades rurais usando QGIS e Python, integrado com geração de relatórios automatizados.",
-    tags: ["QGIS", "Python", "Geoespacial"],
+    title: "Plugin RMCGEO",
+    description: "Plugin para QGIS que automatiza e otimiza o fluxo de trabalho em projetos de cartografia e agrimensura, com ferramentas especializadas e interface intuitiva.",
+    tags: ["QGIS", "Python", "PyQGIS", "PostgreSQL", "PostGIS"],
     imageUrl: "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?auto=format&fit=crop&w=600&h=400",
-    githubUrl: "https://github.com/rodolfom9",
-    liveUrl: "#"
+    githubUrl: "https://github.com/rodolfom9/rmcgeo2",
+    liveUrl: "/rmcgeo2",
+    demoDescription: "Sistema desenvolvido para automatizar o processo de mapeamento de propriedades rurais, utilizando QGIS como base e Python para automação. O projeto inclui:\n\n" +
+      "• Processamento de dados geoespaciais\n" +
+      "• Geração automática de relatórios\n" +
+      "• Integração com PostgreSQL/PostGIS\n" +
+      "• Análise espacial avançada\n" +
+      "• Interface personalizada no QGIS"
   },
   {
     id: 2,
-    title: "Nada aqui",
-    description: "Aplicação para processamento de dados topográficos capturados por drones, com visualização 3D e geração de curvas de nível.",
-    tags: ["React", "Three.js", "WebGL"],
-    imageUrl: "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=600&h=400",
-    githubUrl: "https://github.com/rodolfom9",
-    liveUrl: "#"
+    title: "RMCGEO Leite",
+    description: "Sistema web para gestão de propriedades leiteiras, integrando dados geoespaciais com informações zootécnicas e financeiras.",
+    tags: ["React", "TypeScript", "Tailwind", "shadcn/ui", "Vite"],
+    imageUrl: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=600&h=400",
+    githubUrl: "https://github.com/rodolfom9/rmcgeoleite",
+    liveUrl: "/rmcgeoleite",
   },
   {
     id: 3,
@@ -118,10 +125,10 @@ const ProjectsSection = () => {
                     asChild
                     className="group/link"
                   >
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                      <Link size={16} className="group-hover/link:text-primary transition-colors duration-300" />
+                    <Link to={project.liveUrl} className="flex items-center gap-2">
+                      <LinkIcon size={16} className="group-hover/link:text-primary transition-colors duration-300" />
                       <span className="group-hover/link:text-primary transition-colors duration-300">Demo</span>
-                    </a>
+                    </Link>
                   </Button>
                 </CardFooter>
               </Card>
