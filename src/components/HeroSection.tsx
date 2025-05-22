@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 
 // Componente da seção principal do site
 const HeroSection = () => {
-  // Função para rolar até a seção de projetos
-  const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -14,13 +16,16 @@ const HeroSection = () => {
     <section
       id="home"
       className="min-h-screen relative flex items-center pt-16 overflow-hidden"
+      aria-label="Seção principal"
     >
-      {/* Imagem de fundo */}
+      {/* Imagem de fundo com descrição para acessibilidade */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1920&q=80')",
         }}
+        role="img"
+        aria-label="Mapa topográfico de fundo"
       />
 
       {/* Camada escura sobre a imagem */}
@@ -28,7 +33,7 @@ const HeroSection = () => {
       
       {/* Padrão de grade decorativo */}
       <div
-        className="absolute inset-0 bg-grid-pattern opacity-15"
+        className="absolute inset-0 opacity-15"
         style={{
           backgroundSize: '50px 50px',
           backgroundImage: `
@@ -36,9 +41,10 @@ const HeroSection = () => {
             linear-gradient(to right, rgba(76, 175, 80, 0.15) 1px, transparent 1px)
           `
         }}
+        aria-hidden="true"
       />
 
-      {/* Círculos decorativos animados */}
+      {/* Círculos decorativos animados - Otimizados para performance */}
       <motion.div
         className="absolute -top-40 -right-40 w-96 h-96 bg-[#4CAF50]/5 rounded-full filter blur-3xl"
         animate={{
@@ -50,6 +56,7 @@ const HeroSection = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
+        aria-hidden="true"
       />
       <motion.div
         className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#FFEB3B]/5 rounded-full filter blur-3xl"
@@ -62,6 +69,7 @@ const HeroSection = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
+        aria-hidden="true"
       />
 
       {/* Conteúdo principal */}
@@ -74,7 +82,7 @@ const HeroSection = () => {
         >
           {/* Título principal */}
           <motion.h1 
-            className="text-5xl md:text-7xl font-display font-bold mb-6"
+            className="text-4xl md:text-7xl font-display font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -90,6 +98,7 @@ const HeroSection = () => {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
+                aria-hidden="true"
               />
             </span>
             <span className="inline-block mt-4">& Topografia</span>
@@ -97,7 +106,7 @@ const HeroSection = () => {
 
           {/* Subtítulo */}
           <motion.p 
-            className="text-xl text-foreground/80 mb-8 leading-relaxed"
+            className="text-lg md:text-xl text-foreground/90 mb-8 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
@@ -113,18 +122,20 @@ const HeroSection = () => {
             transition={{ delay: 0.8 }}
           >
             <Button
-              onClick={scrollToProjects}
+              onClick={() => scrollToSection('projects')}
               className="group bg-primary hover:bg-primary/90 text-white px-8 hover-glow"
               size="lg"
+              aria-label="Ver projetos"
             >
               Ver Projetos
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Button>
             <Button
               variant="outline"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('contact')}
               size="lg"
               className="glass-effect hover-glow px-8"
+              aria-label="Entrar em contato"
             >
               Entrar em contato
             </Button>
@@ -137,11 +148,12 @@ const HeroSection = () => {
         className="hidden md:block absolute bottom-10 right-10 w-40 h-40 border-2 border-[#4CAF50]/20 rounded-full hover-glow"
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 300 }}
+        aria-hidden="true"
       >
         <div className="absolute inset-0 opacity-60" style={{
           backgroundImage: "radial-gradient(circle, transparent 60%, rgba(76, 175, 80, 0.15) 60%, rgba(76, 175, 80, 0.15) 65%, transparent 65%)"
         }}></div>
-        <Map className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#4CAF50]/40 h-8 w-8" />
+        <Map className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#4CAF50]/40 h-8 w-8" aria-hidden="true" />
       </motion.div>
     </section>
   );

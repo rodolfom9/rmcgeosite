@@ -5,41 +5,27 @@
 @tailwind utilities;
 
 @layer base {
-  html, body {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-  }
-
   :root {
+    /* Cores do tema claro */
     --background: 0 0% 100%;
     --foreground: 220 13% 18%;
-
     --card: 0 0% 98%;
     --card-foreground: 220 13% 18%;
-
     --popover: 0 0% 98%;
     --popover-foreground: 220 13% 18%;
-
     --primary: 142 69% 45%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 142 69% 35%;
     --secondary-foreground: 0 0% 100%;
-
     --muted: 220 13% 95%;
     --muted-foreground: 220 13% 60%;
-
     --accent: 142 69% 45%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 220 13% 85%;
     --input: 220 13% 85%;
     --ring: 142 69% 45%;
-
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
@@ -53,30 +39,23 @@
   }
 
   .dark {
+    /* Cores do tema escuro */
     --background: 220 13% 18%;
     --foreground: 0 0% 98%;
-
     --card: 220 13% 22%;
     --card-foreground: 0 0% 98%;
-
     --popover: 220 13% 22%;
     --popover-foreground: 0 0% 98%;
-
     --primary: 142 69% 45%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 142 69% 35%;
     --secondary-foreground: 0 0% 100%;
-
     --muted: 220 13% 25%;
     --muted-foreground: 220 13% 70%;
-
     --accent: 142 69% 45%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 220 13% 30%;
     --input: 220 13% 30%;
     --ring: 142 69% 45%;
@@ -97,8 +76,16 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 }
 
@@ -123,5 +110,15 @@
 
   .hover-glow {
     @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(76,175,80,0.3)];
+  }
+
+  /* Otimização de performance para animações */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
