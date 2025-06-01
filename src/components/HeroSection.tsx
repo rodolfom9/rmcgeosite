@@ -90,7 +90,7 @@ const HeroSection = () => {
             Projetos{" "}
             <span className="relative inline-block mr-4">
               <span className="bg-gradient-to-r from-[#4CAF50] to-[#FFEB3B] bg-clip-text text-transparent">
-                Qgis, Web...
+              (SITE AINDA EM CONSTRUÇÃO)
               </span>
               {/* Linha decorativa sob "Mapeamento" */}
               <motion.div
