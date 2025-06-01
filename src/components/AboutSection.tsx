@@ -76,10 +76,10 @@ const AboutSection = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              Expertise em{" "}
+              Um pouco sobre{" "}
               <span className="relative">
                 <span className="bg-gradient-to-r from-[#4CAF50] to-[#FFEB3B] bg-clip-text text-transparent">
-                  Geotecnologias
+                  <br></br> Meu Trabalho
                 </span>
                 <motion.div
                   className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#4CAF50] to-[#FFEB3B]"
@@ -98,13 +98,13 @@ const AboutSection = () => {
               className="space-y-4"
             >
               <p className="text-foreground/70 leading-relaxed text-lg">
-              Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento/Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento
+                <b>Plugin RMCGEO:</b> Plugin para QGIS que automatiza tarefas de cartografia e agrimensura, integrando ferramentas avançadas e interface intuitiva.
               </p>
               <p className="text-foreground/70 leading-relaxed text-lg">
-              Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento /Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento / Ainda em Desenvolvimento
+                <b>Fluxo Curricular:</b> Sistema web para gerenciamento e visualização do fluxo curricular do curso de Engenharia Cartográfica e de Agrimensura do IFG. Criado para me auxiliar e auxiliar outros alunos.
               </p>
               <p className="text-foreground/70 leading-relaxed text-lg">
-              Não e facil criar a porcaria de um site / Ainda em Desenvolvimento / Ainda em Desenvolvimento
+                <b>RMCGEO Leite:</b> Plataforma online para gestão de propriedades leiteiras, unindo dados geoespaciais, zootécnicos e financeiros. Facilita o controle e a tomada de decisões para produtores rurais.
               </p>
             </motion.div>
           </motion.div>

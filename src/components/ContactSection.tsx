@@ -167,7 +167,7 @@ const ContactSection = () => {
                 id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Sua mensagem"
+                placeholder="AINDA NÃO FUNCIONA."
                 className="min-h-[120px] transition-all duration-300 focus:border-primary/50 focus:ring-primary/20"
                 required
               />

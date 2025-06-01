@@ -51,8 +51,7 @@ const EngcartagriDemo = () => {
             <h2 className="text-3xl font-display font-bold mb-6">Visão Geral</h2>
             <p className="text-foreground/80 text-lg mb-6">
               Sistema web moderno desenvolvido para gerenciamento e visualização do fluxo curricular 
-              do curso de Engenharia Cartográfica e de Agrimensura do IFG. O projeto visa otimizar 
-              a gestão do currículo através de uma interface intuitiva e funcionalidades especializadas.
+              do curso de Engenharia Cartográfica e de Agrimensura do IFG.
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
               <Badge variant="outline" className="bg-primary/5 hover:bg-primary/10 border-primary/20">
