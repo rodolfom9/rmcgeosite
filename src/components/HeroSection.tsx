@@ -87,7 +87,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Projetos{" "}
+            Nada aqui{" "}
             <span className="relative inline-block mr-4">
               <span className="bg-gradient-to-r from-[#4CAF50] to-[#FFEB3B] bg-clip-text text-transparent">
               (SITE AINDA EM CONSTRUÇÃO)

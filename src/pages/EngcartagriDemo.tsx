@@ -127,15 +127,12 @@ const EngcartagriDemo = () => {
                 <li>Frontend em React com TypeScript</li>
                 <li>Banco de dados Supabase</li>
                 <li>Estilização com Tailwind CSS</li>
-                <li>Componentes UI com shadcn/ui</li>
+                <li></li>
               </ul>
 
               <h3>Requisitos</h3>
               <ul>
-                <li>Node.js 18+</li>
-                <li>npm ou yarn</li>
-                <li>Navegador moderno</li>
-                <li>Conta Supabase</li>
+                <li>nada</li>
               </ul>
 
               <h3>Instalação</h3>

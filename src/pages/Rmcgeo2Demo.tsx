@@ -90,10 +90,8 @@ const Rmcgeo2Demo = () => {
               <div className="p-6 rounded-lg border border-border/40 bg-card">
                 <h3 className="text-xl font-display font-semibold mb-3">Integração com Banco de Dados</h3>
                 <p className="text-foreground/80">
-                  • Conexão direta com PostgreSQL/PostGIS<br />
                   • Sincronização automática de dados<br />
                   • Backup e versionamento<br />
-                  • Consultas espaciais otimizadas
                 </p>
               </div>
 

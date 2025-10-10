@@ -4,6 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import iconSvg from "@/assets/icon.svg";
+import rmcgeoleiteImg from "@/assets/rmcgeoleite.png";
+import fluxoImg from "@/assets/fluxo.png";
 
 // Sample project data - replace with your own
 const projects = [
@@ -12,7 +15,7 @@ const projects = [
     title: "Plugin RMCGEO",
     description: "Plugin para QGIS que automatiza e otimiza o fluxo de trabalho em projetos de cartografia e agrimensura, com ferramentas especializadas e interface intuitiva.",
     tags: ["QGIS", "Python", "PyQGIS", "PostgreSQL", "PostGIS"],
-    imageUrl: "/src/assets/icon.svg",
+    imageUrl: iconSvg,
     githubUrl: "https://github.com/rodolfom9/rmcgeo2",
     liveUrl: "/rmcgeo2",
     demoDescription: "Sistema desenvolvido para automatizar o processo de mapeamento de propriedades rurais, utilizando QGIS como base e Python para automação. O projeto inclui:\n\n" +
@@ -27,7 +30,7 @@ const projects = [
     title: "RMCGEO Leite",
     description: "Sistema web para gestão de propriedades leiteiras, integrando dados geoespaciais com informações zootécnicas e financeiras.",
     tags: ["React", "TypeScript", "Tailwind", "shadcn/ui", "Vite"],
-    imageUrl: "/src/assets/rmcgeoleite.png",
+    imageUrl: rmcgeoleiteImg,
     githubUrl: "https://github.com/rodolfom9/rmcgeoleite",
     liveUrl: "/rmcgeoleite",
     accessUrl: "https://agroleite.rmcgeo.com.br/",
@@ -37,7 +40,7 @@ const projects = [
     title: "Fluxo Curricular",
     description: "Sistema web para gerenciamento e visualização do fluxo curricular do curso de Engenharia Cartográfica e de Agrimensura do IFG.",
     tags: ["React", "TypeScript", "Supabase", "Tailwind", "shadcn/ui"],
-    imageUrl: "/src/assets/fluxo.png",
+    imageUrl: fluxoImg,
     githubUrl: "https://github.com/rodolfom9/engcartagri",
     liveUrl: "/engcartagri",
     accessUrl: "https://engcartagri.rmcgeo.com.br",
