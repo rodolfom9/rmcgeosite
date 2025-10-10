@@ -16,8 +16,8 @@ const projects = [
     description: "Plugin para QGIS que automatiza e otimiza o fluxo de trabalho em projetos de cartografia e agrimensura, com ferramentas especializadas e interface intuitiva.",
     tags: ["QGIS", "Python", "PyQGIS", "PostgreSQL", "PostGIS"],
     imageUrl: iconSvg,
-    githubUrl: "https://github.com/rodolfom9/rmcgeo2",
-    liveUrl: "/rmcgeo2",
+    githubUrl: "https://github.com/rodolfom9/rmcgeo",
+    liveUrl: "/rmcgeo",
     demoDescription: "Sistema desenvolvido para automatizar o processo de mapeamento de propriedades rurais, utilizando QGIS como base e Python para automação. O projeto inclui:\n\n" +
       "• Processamento de dados geoespaciais\n" +
       "• Geração automática de relatórios\n" +
