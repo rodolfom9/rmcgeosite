@@ -14,22 +14,17 @@ const projects = [
     id: 1,
     title: "Plugin RMCGEO",
     description: "Plugin para QGIS que automatiza e otimiza o fluxo de trabalho em projetos de cartografia e agrimensura, com ferramentas especializadas e interface intuitiva.",
-    tags: ["QGIS", "Python", "PyQGIS", "PostgreSQL", "PostGIS"],
+    tags: ["QGIS", "Python", "PyQGIS"],
     imageUrl: iconSvg,
     githubUrl: "https://github.com/rodolfom9/rmcgeo",
     liveUrl: "/rmcgeo",
-    demoDescription: "Sistema desenvolvido para automatizar o processo de mapeamento de propriedades rurais, utilizando QGIS como base e Python para automação. O projeto inclui:\n\n" +
-      "• Processamento de dados geoespaciais\n" +
-      "• Geração automática de relatórios\n" +
-      "• Integração com PostgreSQL/PostGIS\n" +
-      "• Análise espacial avançada\n" +
-      "• Interface personalizada no QGIS"
+    accessUrl: "https://plugins.qgis.org/plugins/rmcgeo/",
   },
   {
     id: 2,
-    title: "RMCGEO Leite",
+    title: "Em Desenvolvimento",
     description: "Sistema web para gestão de propriedades leiteiras, integrando dados geoespaciais com informações zootécnicas e financeiras.",
-    tags: ["React", "TypeScript", "Tailwind", "shadcn/ui", "Vite"],
+    tags: ["React", "TypeScript", "Tailwind"],
     imageUrl: rmcgeoleiteImg,
     githubUrl: "https://github.com/rodolfom9/rmcgeoleite",
     liveUrl: "/rmcgeoleite",
@@ -39,7 +34,7 @@ const projects = [
     id: 3,
     title: "Fluxo Curricular",
     description: "Sistema web para gerenciamento e visualização do fluxo curricular do curso de Engenharia Cartográfica e de Agrimensura do IFG.",
-    tags: ["React", "TypeScript", "Supabase", "Tailwind", "shadcn/ui"],
+    tags: ["React", "TypeScript", "Supabase", "Tailwind"],
     imageUrl: fluxoImg,
     githubUrl: "https://github.com/rodolfom9/engcartagri",
     liveUrl: "/engcartagri",
@@ -145,7 +140,7 @@ const ProjectsSection = () => {
                   >
                     <Link to={project.liveUrl} className="flex items-center gap-2">
                       <LinkIcon size={16} className="group-hover/link:text-primary transition-colors duration-300" />
-                      <span className="group-hover/link:text-primary transition-colors duration-300">Demo</span>
+                      <span className="group-hover/link:text-primary transition-colors duration-300">Sobre</span>
                     </Link>
                   </Button>
                 </CardFooter>

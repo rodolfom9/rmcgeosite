@@ -50,10 +50,8 @@ const RmcgeoleiteDemo = () => {
           <section className="mb-12">
             <h2 className="text-3xl font-display font-bold mb-6">Visão Geral</h2>
             <p className="text-foreground/80 text-lg mb-6">
-              Sistema web moderno desenvolvido para gestão integrada de propriedades leiteiras, 
-              combinando dados geoespaciais com informações zootécnicas e financeiras. O projeto 
-              visa otimizar a gestão de fazendas leiteiras através de uma interface intuitiva e 
-              funcionalidades especializadas.
+              Sistema para gestão integrada de propriedades leiteiras, 
+              combinando dados geoespaciais com informações zootécnicas e financeiras. Ainda em desenvolvimento.
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
               <Badge variant="outline" className="bg-primary/5 hover:bg-primary/10 border-primary/20">
@@ -64,12 +62,6 @@ const RmcgeoleiteDemo = () => {
               </Badge>
               <Badge variant="outline" className="bg-primary/5 hover:bg-primary/10 border-primary/20">
                 Tailwind
-              </Badge>
-              <Badge variant="outline" className="bg-primary/5 hover:bg-primary/10 border-primary/20">
-                shadcn/ui
-              </Badge>
-              <Badge variant="outline" className="bg-primary/5 hover:bg-primary/10 border-primary/20">
-                Vite
               </Badge>
             </div>
           </section>
@@ -84,7 +76,6 @@ const RmcgeoleiteDemo = () => {
                   • Cadastro completo de propriedades<br />
                   • Visualização em mapa interativo<br />
                   • Gestão de áreas e divisões<br />
-                  • Histórico de alterações
                 </p>
               </div>
 
@@ -93,8 +84,6 @@ const RmcgeoleiteDemo = () => {
                 <p className="text-foreground/80">
                   • Registro de rebanho<br />
                   • Controle de produção<br />
-                  • Acompanhamento sanitário<br />
-                  • Gestão de alimentação
                 </p>
               </div>
 
@@ -120,43 +109,12 @@ const RmcgeoleiteDemo = () => {
             </div>
           </section>
 
-          {/* Technical Details */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-display font-bold mb-6">Detalhes Técnicos</h2>
-            <div className="prose prose-invert max-w-none">
-              <h3>Arquitetura</h3>
-              <ul>
-                <li>Frontend em React com TypeScript</li>
-                <li>Estilização com Tailwind CSS</li>
-                <li>Componentes UI com shadcn/ui</li>
-                <li>Build otimizado com Vite</li>
-              </ul>
-
-              <h3>Requisitos</h3>
-              <ul>
-                <li>Node.js 18+</li>
-                <li>npm ou yarn</li>
-                <li>Navegador moderno</li>
-                <li>Git para versionamento</li>
-              </ul>
-
-              <h3>Instalação</h3>
-              <ul>
-                <li>Clone do repositório</li>
-                <li>Instalação de dependências</li>
-                <li>Configuração de variáveis de ambiente</li>
-                <li>Inicialização do servidor de desenvolvimento</li>
-              </ul>
-            </div>
-          </section>
-
           {/* GitHub Section */}
           <section className="mb-12">
             <h2 className="text-3xl font-display font-bold mb-6">Código Fonte</h2>
             <div className="p-6 rounded-lg border border-border/40 bg-card">
               <p className="text-foreground/80 mb-4">
-                O código fonte do projeto está disponível no GitHub. Você pode contribuir, 
-                reportar issues ou fazer um fork do projeto.
+                O código fonte do projeto está disponível no GitHub.
               </p>
               <Button asChild className="group">
                 <a 

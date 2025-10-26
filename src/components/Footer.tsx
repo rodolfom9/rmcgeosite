@@ -1,4 +1,4 @@
-import { Github, Mail, ArrowUp } from "lucide-react";
+import { Github, Send, ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -11,8 +11,7 @@ const Footer = () => {
   const navItems = [
     { id: 'home', label: 'Início' },
     { id: 'projects', label: 'Projetos' },
-    { id: 'about', label: 'Sobre' },
-    { id: 'contact', label: 'Contato' }
+    { id: 'about', label: 'Sobre' }
   ];
   
   return (
@@ -54,7 +53,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <motion.a 
                 key={item.id}
                 href={`#${item.id}`}
@@ -96,13 +95,15 @@ const Footer = () => {
               <Github size={18} />
             </motion.a>
             <motion.a 
-              href="mailto:contato@exemplo.com"
+              href="https://t.me/rodolfo09" 
+              target="_blank" 
+              rel="noopener noreferrer"
               className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
-              aria-label="Email"
-              whileHover={{ scale: 1.1, rotate: -5 }}
+              aria-label="Telegram"
+              whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Mail size={18} />
+              <Send size={18} />
             </motion.a>
             <motion.button
               onClick={scrollToTop}

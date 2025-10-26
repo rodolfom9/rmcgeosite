@@ -75,7 +75,7 @@ const HeroSection = () => {
       {/* Conteúdo principal */}
       <div className="container mx-auto px-4 relative z-30">
         <motion.div 
-          className="max-w-3xl mx-auto md:mx-0"
+          className="max-w-6xl mx-auto md:mx-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -87,10 +87,10 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Nada aqui{" "}
+            {" "}
             <span className="relative inline-block mr-4">
-              <span className="bg-gradient-to-r from-[#4CAF50] to-[#FFEB3B] bg-clip-text text-transparent">
-              (SITE AINDA EM CONSTRUÇÃO)
+              <span className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-[#4CAF50] to-[#FFEB3B] bg-clip-text text-transparent">
+              (Cartografia & Agrimensura)
               </span>
               {/* Linha decorativa sob "Mapeamento" */}
               <motion.div
@@ -101,7 +101,7 @@ const HeroSection = () => {
                 aria-hidden="true"
               />
             </span>
-            <span className="inline-block mt-4">Cartografia & Agrimensura</span>
+            <span className="inline-block text-2xl md:text-4xl lg:text-5xl xl:text-6xl mt-4 md:mt-0 md:ml-2">"Mapeando o presente, projetando o amanhã."</span>
           </motion.h1>
 
           {/* Subtítulo */}
@@ -111,7 +111,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            Site pessoal para testar minhas ferramentas em software open source.
+            Site pessoal dedicado a projetos de cartografia e agrimensura,
           </motion.p>
 
           {/* Botões de ação */}
@@ -129,15 +129,6 @@ const HeroSection = () => {
             >
               Ver Projetos
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => scrollToSection('contact')}
-              size="lg"
-              className="glass-effect hover-glow px-8"
-              aria-label="Entrar em contato"
-            >
-              Entrar em contato
             </Button>
           </motion.div>
         </motion.div>

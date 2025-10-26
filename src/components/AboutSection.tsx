@@ -6,22 +6,22 @@ const skills = [
   {
     icon: <Map className="h-8 w-8 text-primary" />,
     title: "Cartografia",
-    description: "Desenvolvimento de mapas digitais, Desenvolvimento de PLugins no QGIS (Sistema de Informaçao Geográfica)."
+    description: " Desenvolvimento de PLugins no QGIS."
   },
   {
     icon: <Ruler className="h-8 w-8 text-primary" />,
     title: "Agrimensura",
-    description: "Levantamentos topográficos, georreferenciamento de imóveis rurais e processamento de dados de campo."
+    description: ""
   },
   {
     icon: <Compass className="h-8 w-8 text-primary" />,
     title: "Geotecnologias",
-    description: "Null."
+    description: ""
   },
   {
     icon: <Landmark className="h-8 w-8 text-primary" />,
     title: "Gestão Territorial",
-    description: "Null."
+    description: ""
   }
 ];
 
@@ -104,7 +104,7 @@ const AboutSection = () => {
                 <b>Fluxo Curricular:</b> Sistema web para gerenciamento e visualização do fluxo curricular do curso de Engenharia Cartográfica e de Agrimensura do IFG. Criado para me auxiliar e auxiliar outros alunos.
               </p>
               <p className="text-foreground/70 leading-relaxed text-lg">
-                <b>RMCGEO Leite:</b> Plataforma online para gestão de propriedades leiteiras, unindo dados geoespaciais, zootécnicos e financeiros. Facilita o controle e a tomada de decisões para produtores rurais.
+                <b>RMCGEO Leite:</b> Plataforma online para gestão de propriedades leiteiras, unindo dados geoespaciais, e financeiros.
               </p>
             </motion.div>
           </motion.div>

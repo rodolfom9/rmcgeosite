@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-const Rmcgeo2Demo = () => {
+const RmcgeoDemo = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -41,8 +41,10 @@ const Rmcgeo2Demo = () => {
           <section className="mb-12">
             <h2 className="text-3xl font-display font-bold mb-6">Visão Geral</h2>
             <p className="text-foreground/80 text-lg mb-6">
-              Plugin desenvolvido para o QGIS que automatiza e otimiza o fluxo de trabalho em projetos de cartografia e agrimensura. 
-              O plugin oferece uma interface intuitiva e ferramentas especializadas para profissionais da área geoespacial.
+              RMCGEO é um conjunto abrangente de ferramentas geoespaciais que inclui:
+              conversão de coordenadas, desenho por azimute e distância,
+              desenho por rumo e distância, offset, extend, chanfer, inserção de pontos por coordenadas,
+              cópia de coordenadas e ferramentas para manipulação de tabelas de atributos.
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
               <Badge variant="outline" className="bg-primary/5 hover:bg-primary/10 border-primary/20">
@@ -54,12 +56,6 @@ const Rmcgeo2Demo = () => {
               <Badge variant="outline" className="bg-primary/5 hover:bg-primary/10 border-primary/20">
                 PyQGIS
               </Badge>
-              <Badge variant="outline" className="bg-primary/5 hover:bg-primary/10 border-primary/20">
-                PostgreSQL
-              </Badge>
-              <Badge variant="outline" className="bg-primary/5 hover:bg-primary/10 border-primary/20">
-                PostGIS
-              </Badge>
             </div>
           </section>
 
@@ -68,72 +64,58 @@ const Rmcgeo2Demo = () => {
             <h2 className="text-3xl font-display font-bold mb-6">Funcionalidades</h2>
             <div className="grid gap-6">
               <div className="p-6 rounded-lg border border-border/40 bg-card">
-                <h3 className="text-xl font-display font-semibold mb-3">Ferramentas de Edição</h3>
+                <h3 className="text-xl font-display font-semibold mb-3">Desenho por azimute e distância</h3>
                 <p className="text-foreground/80">
-                  • Edição avançada de geometrias<br />
-                  • Ferramentas de topologia<br />
-                  • Validação automática de dados<br />
-                  • Correção de erros geométricos
+                  • Desenha com Preview<br />
+                  • Edição da linha mesmo em Preview<br />
                 </p>
               </div>
 
               <div className="p-6 rounded-lg border border-border/40 bg-card">
-                <h3 className="text-xl font-display font-semibold mb-3">Automação de Processos</h3>
+                <h3 className="text-xl font-display font-semibold mb-3">Desenho por rumo e distância</h3>
                 <p className="text-foreground/80">
-                  • Processamento em lote de dados<br />
-                  • Geração automática de relatórios<br />
-                  • Exportação em múltiplos formatos<br />
-                  • Templates personalizáveis
+                  • Desenha com Preview<br />
+                  • Edição da linha mesmo em Preview<br />
                 </p>
               </div>
 
               <div className="p-6 rounded-lg border border-border/40 bg-card">
-                <h3 className="text-xl font-display font-semibold mb-3">Integração com Banco de Dados</h3>
+                <h3 className="text-xl font-display font-semibold mb-3">Conversor de Cordenadas</h3>
                 <p className="text-foreground/80">
-                  • Sincronização automática de dados<br />
-                  • Backup e versionamento<br />
+                  • Converter Decimal para GMS<br />
+                  • Converter GMS para Decimal<br />
                 </p>
               </div>
 
               <div className="p-6 rounded-lg border border-border/40 bg-card">
-                <h3 className="text-xl font-display font-semibold mb-3">Interface Personalizada</h3>
+                <h3 className="text-xl font-display font-semibold mb-3">Similares a ferramentas CAD</h3>
                 <p className="text-foreground/80">
-                  • Painel de controle intuitivo<br />
-                  • Atalhos personalizados<br />
-                  • Temas e estilos personalizáveis<br />
+                  • Offset<br />
+                  • Extend<br />
+                  • Chanfro<br />
+                </p>
+              </div>
+
+              <div className="p-6 rounded-lg border border-border/40 bg-card">
+                <h3 className="text-xl font-display font-semibold mb-3">Ferramentas</h3>
+                <p className="text-foreground/80">
+                  • Street View<br />
+                  • Copiar coordenadas<br />
+                  • Pontos por coordenadas<br />
                   • Suporte a múltiplos idiomas
                 </p>
               </div>
-            </div>
-          </section>
 
-          {/* Technical Details */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-display font-bold mb-6">Detalhes Técnicos</h2>
-            <div className="prose prose-invert max-w-none">
-              <h3>Arquitetura</h3>
-              <ul>
-                <li>Desenvolvido em Python usando a API PyQGIS</li>
-                <li>Interface gráfica com Qt Designer</li>
-                <li>Integração nativa com PostgreSQL/PostGIS</li>
-                <li>Suporte a múltiplas versões do QGIS</li>
-              </ul>
-
-              <h3>Requisitos</h3>
-              <ul>
-                <li>QGIS 3.x (3.16 ou superior)</li>
-                <li>Python 3.8+</li>
-                <li>PostgreSQL 12+ com PostGIS (opcional)</li>
-                <li>Bibliotecas Python: PyQGIS, psycopg2, pandas</li>
-              </ul>
-
-              <h3>Instalação</h3>
-              <ul>
-                <li>Instalação via gerenciador de plugins do QGIS</li>
-                <li>Instalação manual via arquivo ZIP</li>
-                <li>Configuração automática de dependências</li>
-                <li>Guia de instalação detalhado no GitHub</li>
-              </ul>
+              <div className="p-6 rounded-lg border border-border/40 bg-card">
+                <h3 className="text-xl font-display font-semibold mb-3">Ferramentas para manipulação de tabelas de atributos</h3>
+                <p className="text-foreground/80">
+                  • Adicionar Área na Tabela<br />
+                  • Adicionar Azimute GMS ou decimal na Tabela<br />
+                  • Adicionar Perímetro na Tabela<br />
+                  • Adicionar Coordenada X e Y na Tabela<br />
+                  • Adicionar Comprimento na Tabela<br />
+                </p>
+              </div>
             </div>
           </section>
 
@@ -142,12 +124,11 @@ const Rmcgeo2Demo = () => {
             <h2 className="text-3xl font-display font-bold mb-6">Código Fonte</h2>
             <div className="p-6 rounded-lg border border-border/40 bg-card">
               <p className="text-foreground/80 mb-4">
-                O código fonte do plugin está disponível no GitHub. Você pode contribuir, 
-                reportar issues ou fazer um fork do projeto.
+                O código fonte do plugin está disponível no GitHub.
               </p>
               <Button asChild className="group">
                 <a 
-                  href="https://github.com/rodolfom9/rmcgeo2" 
+                  href="https://github.com/rodolfom9/rmcgeo" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
@@ -166,4 +147,4 @@ const Rmcgeo2Demo = () => {
   );
 };
 
-export default Rmcgeo2Demo; 
+export default RmcgeoDemo;

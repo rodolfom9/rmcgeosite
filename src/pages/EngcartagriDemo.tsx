@@ -102,7 +102,6 @@ const EngcartagriDemo = () => {
                   • Visualização dos horários<br />
                   • Detecção de conflitos<br />
                   • Organização por dia/horário<br />
-                  • Interface intuitiva
                 </p>
               </div>
 
@@ -110,38 +109,8 @@ const EngcartagriDemo = () => {
                 <h3 className="text-xl font-display font-semibold mb-3">Autenticação</h3>
                 <p className="text-foreground/80">
                   • Login/Registro de usuários<br />
-                  • Persistência de dados<br />
-                  • Controle de acesso<br />
-                  • Perfis personalizados
                 </p>
               </div>
-            </div>
-          </section>
-
-          {/* Technical Details */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-display font-bold mb-6">Detalhes Técnicos</h2>
-            <div className="prose prose-invert max-w-none">
-              <h3>Arquitetura</h3>
-              <ul>
-                <li>Frontend em React com TypeScript</li>
-                <li>Banco de dados Supabase</li>
-                <li>Estilização com Tailwind CSS</li>
-                <li></li>
-              </ul>
-
-              <h3>Requisitos</h3>
-              <ul>
-                <li>nada</li>
-              </ul>
-
-              <h3>Instalação</h3>
-              <ul>
-                <li>Clone do repositório</li>
-                <li>Instalação de dependências</li>
-                <li>Configuração do Supabase</li>
-                <li>Inicialização do servidor</li>
-              </ul>
             </div>
           </section>
 

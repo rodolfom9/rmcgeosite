@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Github, Moon, Sun, Menu, X } from "lucide-react";
+import { Github, Send, Moon, Sun, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/ThemeProvider";
 import { motion, AnimatePresence } from "framer-motion";
@@ -28,8 +28,7 @@ const Header = () => {
   const navItems = [
     { id: 'home', label: 'Início' },
     { id: 'projects', label: 'Projetos' },
-    { id: 'about', label: 'Sobre' },
-    { id: 'contact', label: 'Contato' }
+    { id: 'about', label: 'Sobre' }
   ];
 
   return (
@@ -87,6 +86,16 @@ const Header = () => {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <Github size={20} />
+          </motion.a>
+          <motion.a 
+            href="https://t.me/rodolfo09" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <Send size={20} />
           </motion.a>
           <motion.div whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
           <Button 
